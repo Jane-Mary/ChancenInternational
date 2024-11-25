@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader, Heading } from "@chakra-ui/react";
+import { Card, CardBody} from "@chakra-ui/react";
 
 const CustomCard = ({ className, children }) => {
   return (
@@ -8,4 +8,4 @@ const CustomCard = ({ className, children }) => {
   );
 };
 
-export default CustomCard;
+export default CustomCard

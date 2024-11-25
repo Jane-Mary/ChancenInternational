@@ -1,0 +1,28 @@
+/* Sidebar.css */
+.admin-layout {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  height: 100vh; /* Full viewport height */
+}
+  
+  .sidebar {
+    width: 300px; /* Set a fixed width for the sidebar */
+    height: 100vh; /* Full height */
+    position: fixed; /* Fix the sidebar to the left */
+    background-color: #fff; /* Background color of the sidebar */
+    transition: transform 0.3s ease; /* Animation for showing/hiding */
+    z-index: 1000; /* Ensure sidebar is above other content */
+  }
+  
+  .main-content {
+    margin-left: 250px; /* Leave space for the sidebar */
+    flex-grow: 1; /* Allow this to grow and take the remaining space */
+    padding: 20px; /* Add some padding */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    margin-top: 5rem;
+  }
+  
+  /* Adjust for when sidebar is hidden */
+  .show-sidebar .main-content {
+    margin-left: 0; /* Remove margin when sidebar is hidden */
+  }

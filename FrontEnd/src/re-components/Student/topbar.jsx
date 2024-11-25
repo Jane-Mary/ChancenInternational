@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import logo from "../../assets/Images/adminImages/Chance.png";
-import '../../style/adminstyles/sideBar.css'; // Ensure you have the necessary CSS
+import '../../style/studentstyles/topbar.css'; // Ensure you have the necessary CSS
 
-const Sidebar = () => {
+const Topbar = () => {
 
-    const [activeLink, setActiveLink] = useState('dashboard'); // Default active link
+    const [activeLink, setActiveLink] = useState('Student-Dashboard'); // Default active link
 
     const handleLinkClick = (link) => {
         setActiveLink(link);
@@ -12,18 +12,12 @@ const Sidebar = () => {
 
     useEffect(() => {
         // Set the active link based on the current pathname
-        if (location.pathname === '/students') {
-            setActiveLink('students');
-        } else if (location.pathname === '/') {
-            setActiveLink('home');
-        } else if (location.pathname === '/repayments') {
-            setActiveLink('repayments');
-        } else if (location.pathname === '/statistics') {
-            setActiveLink('statistics');
-        }else if (location.pathname === '/notifications') {
-            setActiveLink('notifications');
-        }else if (location.pathname === '/settings') {
-            setActiveLink('settings');
+        if (location.pathname === '/student/student-dashboard') {
+            setActiveLink('Student-Dashboard');
+        } else if (location.pathname === '/student/student-repayment') {
+            setActiveLink('Repayment');
+        } else if (location.pathname === '/student/student-profile') {
+            setActiveLink('Profile');
         }
     }, [location.pathname]); // Run the effect when the pathname changes
 
@@ -96,11 +90,11 @@ const Sidebar = () => {
                 <div className="sidebar__container">
                     <div className="sidebar__user">
                         <div className="sidebar__img">
-                            <img src={logo} alt="image" />
+                        <img src={logo} alt="image" />
                         </div>
                         <div className="sidebar__info">
-                            <h3>Andy Shelby</h3>
-                            <span style={{color: "hsl(228, 12%, 61%)"}}>andyshelby123@email.com</span>
+                            <h3>User Name</h3>
+                            <span style={{color: "hsl(228, 12%, 61%)"}}>user@email.com</span>
                         </div>
                     </div>
 
@@ -109,65 +103,32 @@ const Sidebar = () => {
                             <h3 className="sidebar__title">MANAGE</h3>
                             <div className="sidebar__list">
                                 <a
-                                    href="/"
-                                    className={`sidebar__link ${activeLink === 'home' ? 'active-link' : ''}`}
-                                    onClick={() => handleLinkClick('dashboard')}
+                                    href="/student/student-dashboard"
+                                    className={`sidebar__link ${activeLink === 'Student-Dashboard' ? 'active-link' : ''}`}
+                                    onClick={() => handleLinkClick('Student-Dashboard')}
                                 >
                                     <i className="ri-pie-chart-2-fill"></i>
-                                    <span>Dashboard</span>
+                                    <span>Student-Dashboard</span>
                                 </a>
                                 <a
-                                    href="/students"
-                                    className={`sidebar__link ${activeLink === 'students' ? 'active-link' : ''}`}
-                                    onClick={() => handleLinkClick('wallet')}
-                                >
-                                    <i className="ri-wallet-3-fill"></i>
-                                    <span>Students</span>
-                                </a>
-                                <a
-                                    href="/repayments"
-                                    className={`sidebar__link ${activeLink === 'repayments' ? 'active-link' : ''}`}
-                                    onClick={() => handleLinkClick('statistics')}
+                                    href="/student/student-repayment"
+                                    className={`sidebar__link ${activeLink === 'Repayment' ? 'active-link' : ''}`}
+                                    onClick={() => handleLinkClick('Repayment')}
                                 >
                                     <i className="ri-bar-chart-box-fill"></i>
-                                    <span>Repayments</span>
+                                    <span>Repayment</span>
                                 </a>
                                 <a
-                                    href="#"
-                                    className={`sidebar__link ${activeLink === 'transactions' ? 'active-link' : ''}`}
-                                    onClick={() => handleLinkClick('transactions')}
+                                    href="/student/student-profile"
+                                    className={`sidebar__link ${activeLink === 'Profile' ? 'active-link' : ''}`}
+                                    onClick={() => handleLinkClick('Profile')}
                                 >
                                     <i className="ri-arrow-up-down-line"></i>
-                                    <span>Recent Transactions</span>
+                                    <span>Profile</span>
                                 </a>
                             </div>
                         </div>
 
-                        <div><i className="ri-settings-3-fill"></i>
-                            <h3 className="sidebar__title">SETTINGS</h3>
-                            <div className="sidebar__list">
-                                <a
-                                    href="/notifications"
-                                    className={`sidebar__link ${activeLink === 'notifications' ? 'active-link' : ''}`}
-                                    onClick={() => handleLinkClick('transactions')}
-                                >
-                                    <i className="ri-notification-2-fill"></i>
-                                    <span>Notifications</span>
-                                </a>
-                                <a href="#" className="sidebar__link">
-                                    <i className="ri-mail-unread-fill"></i>
-                                    <span>My Messages</span>
-                                </a>
-                                <a
-                                    href="/settings"
-                                    className={`sidebar__link ${activeLink === 'settings' ? 'active-link' : ''}`}
-                                    onClick={() => handleLinkClick('transactions')}
-                                >
-                                    <i className="ri-arrow-up-down-line"></i>
-                                    <span>Settings</span>
-                                </a>
-                            </div>
-                        </div>
                     </div>
 
                     <div className="sidebar__actions">
@@ -188,4 +149,4 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
+export default Topbar; 
