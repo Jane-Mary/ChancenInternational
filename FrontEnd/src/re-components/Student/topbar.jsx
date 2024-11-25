@@ -20,7 +20,7 @@ const Topbar = () => {
             setActiveLink('Profile');
         }
     }, [location.pathname]); // Run the effect when the pathname changes
-
+ 
 
     useEffect(() => {
         const sidebarLinks = document.querySelectorAll('.sidebar__list a');
