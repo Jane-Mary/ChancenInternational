@@ -12,11 +12,11 @@ const Topbar = () => {
 
     useEffect(() => {
         // Set the active link based on the current pathname
-        if (location.pathname === '/student/student-dashboard') {
+        if (location.pathname === '/student-dashboard') {
             setActiveLink('Student-Dashboard');
-        } else if (location.pathname === '/student/student-repayment') {
+        } else if (location.pathname === '/student-repayment') {
             setActiveLink('Repayment');
-        } else if (location.pathname === '/student/student-profile') {
+        } else if (location.pathname === '/student-profile') {
             setActiveLink('Profile');
         }
     }, [location.pathname]); // Run the effect when the pathname changes
@@ -103,7 +103,7 @@ const Topbar = () => {
                             <h3 className="sidebar__title">MANAGE</h3>
                             <div className="sidebar__list">
                                 <a
-                                    href="/student/student-dashboard"
+                                    href="/student-dashboard"
                                     className={`sidebar__link ${activeLink === 'Student-Dashboard' ? 'active-link' : ''}`}
                                     onClick={() => handleLinkClick('Student-Dashboard')}
                                 >
@@ -111,7 +111,7 @@ const Topbar = () => {
                                     <span>Student-Dashboard</span>
                                 </a>
                                 <a
-                                    href="/student/student-repayment"
+                                    href="/student-repayment"
                                     className={`sidebar__link ${activeLink === 'Repayment' ? 'active-link' : ''}`}
                                     onClick={() => handleLinkClick('Repayment')}
                                 >
@@ -119,7 +119,7 @@ const Topbar = () => {
                                     <span>Repayment</span>
                                 </a>
                                 <a
-                                    href="/student/student-profile"
+                                    href="/student-profile"
                                     className={`sidebar__link ${activeLink === 'Profile' ? 'active-link' : ''}`}
                                     onClick={() => handleLinkClick('Profile')}
                                 >
